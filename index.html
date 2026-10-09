@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Sugar Pop - Match-3 Puzzle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- MAIN MENU -->
+  <section id="menu" class="screen active">
+    <div class="logo">Sugar<span>Pop</span></div>
+    <p class="tag">Swap, match &amp; pop your way through 10 sweet levels!</p>
+    <button id="btnPlay" class="btn primary big">&#9654; Play</button>
+    <button id="btnLevels" class="btn">Select Level</button>
+    <div class="how">
+      <h3>How to play</h3>
+      <ul>
+        <li>Swap two neighbouring candies (click, or drag) to line up <b>3 or more</b> of the same kind.</li>
+        <li><b>Match 4</b> &rarr; striped candy (clears a whole row / column).</li>
+        <li><b>L or T shape</b> &rarr; blast candy (clears a 3&times;3 area).</li>
+        <li><b>Match 5</b> &rarr; rainbow bomb (swap it with any candy to clear that colour).</li>
+        <li>Reach the level goals before you run out of moves!</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LEVEL SELECT -->
+  <section id="levels" class="screen">
+    <h2>Choose a level</h2>
+    <div id="levelGrid"></div>
+    <button id="btnLevelsBack" class="btn">&larr; Back</button>
+  </section>
+
+  <!-- GAME -->
+  <section id="game" class="screen">
+    <div class="topbar">
+      <button id="btnPause" class="icon-btn" title="Menu">&#9776;</button>
+      <div id="levelTitle">Level 1</div>
+      <button id="btnRestart" class="icon-btn" title="Restart level">&#10227;</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><small>MOVES</small><b id="moves">0</b></div>
+      <div id="goals"></div>
+      <div class="stat"><small>SCORE</small><b id="score">0</b></div>
+    </div>
+    <div class="board-wrap"><canvas id="board"></canvas></div>
+    <div class="bottom">
+      <button id="btnHint" class="icon-btn wide" title="Show a hint">&#128161; Hint</button>
+      <button id="btnSfx" class="icon-btn wide" title="Sound effects">&#128266; Sound</button>
+      <button id="btnMusic" class="icon-btn wide" title="Music">&#127925; Music</button>
+    </div>
+  </section>
+</div>
+
+<div id="modal"><div class="card" id="modalCard"></div></div>
+
+<script src="game.js"></script>
+</body>
+</html>
